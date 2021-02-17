@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <Router>
-        <Route exact path ="/" component={}/>
+        <Route exact path ="/" component={front}/>
       </Router>
     </div>
   );
