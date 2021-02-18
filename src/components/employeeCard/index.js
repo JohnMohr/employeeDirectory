@@ -3,7 +3,7 @@ import "style.css";
 
 function EmployeeCard(props) {
     return (
-        <Thead>
+        <thead>
             <tr>
                 <th>
                     <img alt={props.firstName} src={props.picture} />
@@ -14,7 +14,7 @@ function EmployeeCard(props) {
                 <td>{props.cell}</td>
                 <td>{props.email}</td>
             </tr>
-        </Thead>
+        </thead>
     )
 }
 
