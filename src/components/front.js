@@ -4,24 +4,28 @@ import API from "../utils/API";
 
 export default class front extends Component {
     state = {
-        name: "",
-        results: [],
-        filtered: [],
+        employees: [],
         search: "",
     };
         //component mounted now do this
     componentDidMount() {
         this.searchAPI();
     }
-        // this is this
+        // this is what I meant when I said this
     searchAPI = () => {
         API.search()
         .then((res)=> {
             this.setState({
-                results: res.data.results,
-                filtered: res.data.results,
+               employees: res.data.results.map((e, i) => ({
+                firstName: e.name.first,
+                lastname: e.name.last,
+                picture: e.picture.large,
+                email: e.email,
+                cell: e.cell,
+                city: e.location.city,
+                key: i,
+               })),
             });
-            console.log(res);
         })
         .catch((err) => console.log(err));
     }
