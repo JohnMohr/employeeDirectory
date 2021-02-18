@@ -34,15 +34,23 @@ export default class front extends Component {
         });
       };
 
+    //handleformsubmit
+    handleFormSubmit = event => {
+        event.preventDefault();
+        this.searchAPI(this.state.search);
+      };
 
     //filtered
 
-
-    //handleformsubmit
-
-
-
     //render and return
-
+      render() {
+          return (
+            <div className="wrapper">
+                <Grid container>
+                    <h1 className="title"> Employee Directory</h1>
+                </Grid>
+            </div>
+          )
+      }
 }
 
