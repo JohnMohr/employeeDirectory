@@ -65,7 +65,10 @@ export default class front extends Component {
             <Wrapper>
                 <div className ="container">
                     <div className="row">
-                        
+                        <Col size="md-4">
+                            <h2>EMPLOYEE DISPENSARY</h2>
+                            
+                        </Col>
                     </div>
                 </div>
             </Wrapper>
