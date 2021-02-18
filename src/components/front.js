@@ -30,38 +30,40 @@ export default class front extends Component {
         .catch((err) => console.log(err));
     }
 
+
+    searchEmployee = (filter) => {
+        console.log('Search', filter);
+        const filteredList = this.state.employees.filter((employee)=> {
+            
+            let values = Object.values(employee).join('').toLowerCase();
+            return values.indexOf(filter.toLowerCase()) !== -1;
+        });
+        
+        this.setState({ employees: filteredList });
+    };
+
     handleInputChange = event => {
         const name = event.target.name;
         const value = event.target.value;
         this.setState({
           [name]: value
         });
+        console.log('handle ', this.state.search)
       };
 
     //handleformsubmit
     handleFormSubmit = event => {
         event.preventDefault();
-        this.searchAPI(this.state.search);
+        this.searchEmployee(this.state.search);
       };
 
-    //filtered
+    
 
     //render and return
       render() {
           return (
             <div className="wrapper">
-                <Grid container>
-                    <h1 className="title"> Employee Directory</h1>
-                </Grid>
-                <Grid container spacing={2}>
-                    {
-                    employees.map(employee =>
-                    <EmployeeCard>
-                        key={employee.id}
-                        name=
-                    </EmployeeCard>)
-                    }
-                </Grid>
+                
             </div>
           )
       }
