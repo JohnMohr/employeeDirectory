@@ -62,9 +62,13 @@ export default class front extends Component {
     //render and return
       render() {
           return (
-            <div className="wrapper">
-                
-            </div>
+            <Wrapper>
+                <div className ="container">
+                    <div className="row">
+                        
+                    </div>
+                </div>
+            </Wrapper>
           )
       }
 }
