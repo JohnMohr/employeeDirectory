@@ -13,13 +13,19 @@ function EmployeeCard(props) {
                         <strong> Name:</strong> {props.name.title} {props.name.first} {props.name.last}
                     </li>
                     <li>
-                        <strong> </strong>
+                        <strong> Age: </strong> {props.dob.age} {props.dob.date}
                     </li>
                     <li>
-                        <strong> </strong>
+                        <strong> Location:</strong> {props.location.street.number} {props.location.street.name} {props.location.city}, {props.location.state}, {props.location.country}. {props.location.postcode}
                     </li>
                     <li>
-                        <strong> </strong>
+                        <strong> Timezone: </strong> {props.location.timezone.offset} {props.location.timezone.description}
+                    </li>
+                    <li>
+                        <strong> Email:</strong> {props.email}
+                    </li>
+                    <li>
+                        <strong> Phone: </strong> {props.phone} {props.cell}
                     </li>
                 </ul>
             </div>
