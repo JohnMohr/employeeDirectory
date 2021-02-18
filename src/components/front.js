@@ -92,6 +92,17 @@ export default class front extends Component {
                                         <th>City</th>
                                     </tr>
                                 </thead>
+                                {[...this.state.employees].map((item) => (
+                                <EmployeeCard
+                                picture={item.picture}
+                                firstName={item.firstName}
+                                lastName={item.lastName}
+                                email={item.email}
+                                phone={item.phone}
+                                city={item.city}
+                                key={item.key}
+                                />
+                                ))}
                             </table>
                         </Col>
                     </div>

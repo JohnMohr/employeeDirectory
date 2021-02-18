@@ -1,4 +1,4 @@
-import './App.css';
+import './app.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import front from "./components/front"
 
