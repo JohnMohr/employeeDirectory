@@ -49,6 +49,15 @@ export default class front extends Component {
                 <Grid container>
                     <h1 className="title"> Employee Directory</h1>
                 </Grid>
+                <Grid container spacing={2}>
+                    {
+                    employees.map(employee =>
+                    <EmployeeCard>
+                        key={employee.id}
+                        name=
+                    </EmployeeCard>)
+                    }
+                </Grid>
             </div>
           )
       }
