@@ -1,18 +1,19 @@
 import React from 'react';
-// import "style.css";
+import "./style.css";
 
 function EmployeeCard(props) {
     return (
         <thead>
-            <tr>
+            <tr >
                 <th>
                     <img alt={props.firstName} src={props.picture} />
                 </th>
+                <td class="empcard">{props.email}</td>
                 <td>{props.firstName}</td>
                 <td>{props.lastName}</td>
                 <td>{props.city}</td>
-                <td>{props.cell}</td>
-                <td>{props.email}</td>
+                <td>{props.phone}</td>
+                
             </tr>
         </thead>
     )

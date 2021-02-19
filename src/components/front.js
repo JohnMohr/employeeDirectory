@@ -4,6 +4,7 @@ import EmployeeCard from "./employeeCard"
 import Search from "./Search"
 import Wrapper from "./Wrapper"
 import Col from "./Col"
+import "./front.css"
 
 
 export default class front extends Component {
@@ -22,7 +23,7 @@ export default class front extends Component {
             this.setState({
                employees: res.data.results.map((e, i) => ({
                 firstName: e.name.first,
-                lastname: e.name.last,
+                lastName: e.name.last,
                 picture: e.picture.large,
                 email: e.email,
                 cell: e.cell,
@@ -34,6 +35,9 @@ export default class front extends Component {
         .catch((err) => console.log(err));
     }
 
+    resetPage() {
+        window.location.reload(false);
+    }
 
     searchEmployee = (filter) => {
         console.log('Search', filter);
@@ -70,7 +74,8 @@ export default class front extends Component {
                 <div className ="container">
                     <div className="row">
                         <Col size="md-4">
-                            <h2>EMPLOYEE DISPENSARY</h2>
+                            <h2>ROYAL SUBJECT DISPENSARY</h2>
+                            <h4> Ye Olde Employee Database.</h4>
                             <Search
                                 value={this.state.search}
                                 handleInputChange={this.handleInputChange}
@@ -85,21 +90,21 @@ export default class front extends Component {
                                 <thead>
                                     <tr>
                                         <th>Photo</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
                                         <th>Email</th>
-                                        <th>Cell</th>
+                                        <th>Full</th>
+                                        <th>Name</th>
                                         <th>City</th>
+                                        <th>Phone</th> 
                                     </tr>
                                 </thead>
                                 {[...this.state.employees].map((item) => (
                                 <EmployeeCard
                                 picture={item.picture}
-                                firstName={item.firstName}
+                                firstName={item.firstName} 
                                 lastName={item.lastName}
-                                email={item.email}
-                                phone={item.phone}
                                 city={item.city}
+                                email={item.email}
+                                phone={item.cell}
                                 key={item.key}
                                 />
                                 ))}
